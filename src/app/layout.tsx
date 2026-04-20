@@ -47,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-K7FMZ8XELQ"
+        src="https://www.googletagmanager.com/gtag/js?id=G-VJ851V5BKX"
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -55,7 +55,7 @@ export default function RootLayout({
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-K7FMZ8XELQ');
+          gtag('config', 'G-VJ851V5BKX');
         `}
       </Script>
       <body className="min-h-full flex flex-col font-sans">
