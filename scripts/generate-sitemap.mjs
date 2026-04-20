@@ -12,7 +12,7 @@ const slugs = [
   "laser-printer", "crypto-mining-rig",
 ];
 
-const BASE = "https://appliancecostcalculator.com";
+const BASE = "https://appliancecostcalculator.net";
 const today = new Date().toISOString().split("T")[0];
 
 const urls = [
