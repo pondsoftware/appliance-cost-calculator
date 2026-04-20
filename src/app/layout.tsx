@@ -10,6 +10,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://appliancecostcalculator.net"),
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/favicon.svg",
   },
