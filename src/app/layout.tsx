@@ -39,12 +39,18 @@ export default function RootLayout({
       </Script>
       <body className="min-h-full flex flex-col font-sans">
         <header className="bg-white border-b border-gray-200">
-          <div className="max-w-5xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex items-center justify-between">
             <Link
               href="/"
               className="text-xl font-bold text-gray-900 hover:text-blue-600 transition"
             >
               Appliance Cost Calculator
+            </Link>
+            <Link
+              href="/compare"
+              className="text-sm font-medium text-blue-600 hover:text-blue-800 transition"
+            >
+              Compare Appliances
             </Link>
           </div>
         </header>

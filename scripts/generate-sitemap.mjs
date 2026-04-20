@@ -12,11 +12,28 @@ const slugs = [
   "laser-printer", "crypto-mining-rig",
 ];
 
+// Must match categories in src/data/appliances.ts converted to slugs
+const categories = [
+  "heating-cooling",
+  "kitchen",
+  "laundry",
+  "electronics",
+  "lighting",
+  "bathroom",
+  "outdoor",
+  "home-office",
+];
+
 const BASE = "https://appliancecostcalculator.net";
 const today = new Date().toISOString().split("T")[0];
 
 const urls = [
   `  <url><loc>${BASE}/</loc><lastmod>${today}</lastmod><priority>1.0</priority></url>`,
+  `  <url><loc>${BASE}/compare</loc><lastmod>${today}</lastmod><priority>0.9</priority></url>`,
+  ...categories.map(
+    (c) =>
+      `  <url><loc>${BASE}/category/${c}</loc><lastmod>${today}</lastmod><priority>0.8</priority></url>`
+  ),
   ...slugs.map(
     (s) =>
       `  <url><loc>${BASE}/${s}</loc><lastmod>${today}</lastmod><priority>0.8</priority></url>`
@@ -29,4 +46,4 @@ ${urls.join("\n")}
 </urlset>`;
 
 writeFileSync("public/sitemap.xml", xml);
-console.log(`Generated sitemap.xml with ${slugs.length + 1} URLs`);
+console.log(`Generated sitemap.xml with ${urls.length} URLs`);

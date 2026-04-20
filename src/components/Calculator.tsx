@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Appliance, US_AVERAGE_RATE } from "@/data/appliances";
+import { STATE_RATES } from "@/data/electricity-rates";
 
 interface CalculatorProps {
   appliance: Appliance;
@@ -11,6 +12,19 @@ export default function Calculator({ appliance }: CalculatorProps) {
   const [watts, setWatts] = useState(appliance.watts);
   const [hoursPerDay, setHoursPerDay] = useState(appliance.typicalHoursPerDay);
   const [rate, setRate] = useState(US_AVERAGE_RATE);
+  const [selectedState, setSelectedState] = useState("US");
+
+  const handleStateChange = (value: string) => {
+    setSelectedState(value);
+    if (value === "US") {
+      setRate(US_AVERAGE_RATE);
+    } else {
+      const stateData = STATE_RATES.find((s) => s.abbr === value);
+      if (stateData) {
+        setRate(stateData.rate);
+      }
+    }
+  };
 
   const dailyKwh = (watts * hoursPerDay) / 1000;
   const dailyCost = dailyKwh * rate;
@@ -22,7 +36,7 @@ export default function Calculator({ appliance }: CalculatorProps) {
   return (
     <div className="space-y-8">
       {/* Inputs */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div>
           <label
             htmlFor="watts"
@@ -70,6 +84,27 @@ export default function Calculator({ appliance }: CalculatorProps) {
         </div>
         <div>
           <label
+            htmlFor="state"
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
+            State
+          </label>
+          <select
+            id="state"
+            value={selectedState}
+            onChange={(e) => handleStateChange(e.target.value)}
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition bg-white"
+          >
+            <option value="US">US Average ($0.16/kWh)</option>
+            {STATE_RATES.map((s) => (
+              <option key={s.abbr} value={s.abbr}>
+                {s.state} (${s.rate.toFixed(4)}/kWh)
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label
             htmlFor="rate"
             className="block text-sm font-medium text-gray-700 mb-2"
           >
@@ -80,7 +115,10 @@ export default function Calculator({ appliance }: CalculatorProps) {
               id="rate"
               type="number"
               value={rate}
-              onChange={(e) => setRate(Number(e.target.value))}
+              onChange={(e) => {
+                setRate(Number(e.target.value));
+                setSelectedState("US");
+              }}
               className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
               min={0}
               step={0.01}
