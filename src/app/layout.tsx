@@ -10,6 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon.svg",
+  },
   title: {
     default: "Appliance Electricity Cost Calculator — How Much Does It Cost to Run?",
     template: "%s | Appliance Cost Calculator",
