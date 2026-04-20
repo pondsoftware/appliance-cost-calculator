@@ -16,6 +16,20 @@ export const metadata: Metadata = {
   },
   description:
     "Find out exactly how much it costs to run any appliance. Free electricity cost calculator with pre-loaded wattages for 30+ common appliances.",
+  openGraph: {
+    title: "Appliance Electricity Cost Calculator",
+    description:
+      "Find out exactly how much it costs to run any appliance. Free electricity cost calculator with pre-loaded wattages for 30+ common appliances.",
+    type: "website",
+    url: "https://appliancecostcalculator.net",
+    siteName: "Appliance Cost Calculator",
+  },
+  twitter: {
+    card: "summary",
+    title: "Appliance Electricity Cost Calculator",
+    description:
+      "Find out exactly how much it costs to run any appliance. Free electricity cost calculator with pre-loaded wattages for 30+ common appliances.",
+  },
 };
 
 export default function RootLayout({
