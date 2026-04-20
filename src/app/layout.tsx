@@ -55,17 +55,17 @@ export default function RootLayout({
         `}
       </Script>
       <body className="min-h-full flex flex-col font-sans">
-        <header className="bg-white border-b border-gray-200">
-          <div className="max-w-5xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex items-center justify-between">
-            <Link
-              href="/"
-              className="text-xl font-bold text-gray-900 hover:text-blue-600 transition"
-            >
-              Appliance Cost Calculator
-            </Link>
+        <header className="bg-amber-500 text-white shadow-sm">
+          <div className="max-w-4xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <a href="/" className="flex items-center gap-2">
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+              </svg>
+              <span className="text-xl font-bold">Appliance Cost Calculator</span>
+            </a>
             <Link
               href="/compare"
-              className="text-sm font-medium text-blue-600 hover:text-blue-800 transition"
+              className="text-sm font-medium text-white/90 hover:text-white transition"
             >
               Compare Appliances
             </Link>
@@ -77,16 +77,16 @@ export default function RootLayout({
             <div className="mb-4">
               <p className="text-sm font-medium text-gray-700 text-center mb-2">More Free Tools</p>
               <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm">
-                <a href="https://sidehustletaxcalculator.net" className="text-blue-600 hover:underline">Side Hustle Tax Calculator</a>
-                <a href="https://imageconverters.net" className="text-blue-600 hover:underline">Image Converter</a>
-                <a href="https://photometadata.net" className="text-blue-600 hover:underline">Photo Metadata Viewer</a>
-                <a href="https://freelancerates.net" className="text-blue-600 hover:underline">Freelance Rate Calculator</a>
-                <a href="https://imageresizers.net" className="text-blue-600 hover:underline">Social Image Resizer</a>
-                <a href="https://lendingcalculator.net" className="text-blue-600 hover:underline">Mortgage Calculator</a>
-                <a href="https://compoundinterestcalc.app" className="text-blue-600 hover:underline">Compound Interest Calculator</a>
-                <a href="https://salaryconverter.net" className="text-blue-600 hover:underline">Salary Converter</a>
-                <a href="https://printablepolly.com" className="text-blue-600 hover:underline">Printable Polly</a>
-                <a href="https://biblegarden.net" className="text-blue-600 hover:underline">Bible Garden</a>
+                <a href="https://sidehustletaxcalculator.net" className="text-amber-600 hover:underline">Side Hustle Tax Calculator</a>
+                <a href="https://imageconverters.net" className="text-amber-600 hover:underline">Image Converter</a>
+                <a href="https://photometadata.net" className="text-amber-600 hover:underline">Photo Metadata Viewer</a>
+                <a href="https://freelancerates.net" className="text-amber-600 hover:underline">Freelance Rate Calculator</a>
+                <a href="https://imageresizers.net" className="text-amber-600 hover:underline">Social Image Resizer</a>
+                <a href="https://lendingcalculator.net" className="text-amber-600 hover:underline">Mortgage Calculator</a>
+                <a href="https://compoundinterestcalc.app" className="text-amber-600 hover:underline">Compound Interest Calculator</a>
+                <a href="https://salaryconverter.net" className="text-amber-600 hover:underline">Salary Converter</a>
+                <a href="https://printablepolly.com" className="text-amber-600 hover:underline">Printable Polly</a>
+                <a href="https://biblegarden.net" className="text-amber-600 hover:underline">Bible Garden</a>
               </div>
             </div>
             <p className="text-sm text-gray-500 text-center">

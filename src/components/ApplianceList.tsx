@@ -17,10 +17,10 @@ export default function ApplianceList() {
                 <Link
                   key={appliance.slug}
                   href={`/${appliance.slug}`}
-                  className="flex items-center justify-between rounded-lg border border-gray-200 px-4 py-3 hover:border-blue-300 hover:bg-blue-50 transition group"
+                  className="flex items-center justify-between rounded-lg border border-gray-200 px-4 py-3 hover:border-amber-300 hover:bg-amber-50 transition group"
                 >
                   <div>
-                    <p className="font-medium text-gray-900 group-hover:text-blue-700">
+                    <p className="font-medium text-gray-900 group-hover:text-amber-700">
                       {appliance.name}
                     </p>
                     <p className="text-sm text-gray-500">
@@ -28,7 +28,7 @@ export default function ApplianceList() {
                     </p>
                   </div>
                   <svg
-                    className="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition"
+                    className="w-5 h-5 text-gray-400 group-hover:text-amber-500 transition"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

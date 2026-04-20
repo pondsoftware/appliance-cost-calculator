@@ -51,7 +51,7 @@ export default async function AppliancePage({
     <div className="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
       <Link
         href="/"
-        className="text-sm text-blue-600 hover:text-blue-800 mb-6 inline-block"
+        className="text-sm text-amber-600 hover:text-amber-800 mb-6 inline-block"
       >
         &larr; All appliances
       </Link>
@@ -103,10 +103,10 @@ export default async function AppliancePage({
               <Link
                 key={r.slug}
                 href={`/${r.slug}`}
-                className="flex items-center justify-between rounded-lg border border-gray-200 px-4 py-3 hover:border-blue-300 hover:bg-blue-50 transition group"
+                className="flex items-center justify-between rounded-lg border border-gray-200 px-4 py-3 hover:border-amber-300 hover:bg-amber-50 transition group"
               >
                 <div>
-                  <p className="font-medium text-gray-900 group-hover:text-blue-700">
+                  <p className="font-medium text-gray-900 group-hover:text-amber-700">
                     {r.name}
                   </p>
                   <p className="text-sm text-gray-500">
@@ -114,7 +114,7 @@ export default async function AppliancePage({
                   </p>
                 </div>
                 <svg
-                  className="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition"
+                  className="w-5 h-5 text-gray-400 group-hover:text-amber-500 transition"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

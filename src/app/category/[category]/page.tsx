@@ -52,7 +52,7 @@ export default async function CategoryPage({
     <div className="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
       <Link
         href="/"
-        className="text-sm text-blue-600 hover:text-blue-800 mb-6 inline-block"
+        className="text-sm text-amber-600 hover:text-amber-800 mb-6 inline-block"
       >
         &larr; All appliances
       </Link>
@@ -77,11 +77,11 @@ export default async function CategoryPage({
             <Link
               key={appliance.slug}
               href={`/${appliance.slug}`}
-              className="block rounded-lg border border-gray-200 p-6 hover:border-blue-300 hover:bg-blue-50 transition group"
+              className="block rounded-lg border border-gray-200 p-6 hover:border-amber-300 hover:bg-amber-50 transition group"
             >
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
-                  <h2 className="text-lg font-semibold text-gray-900 group-hover:text-blue-700">
+                  <h2 className="text-lg font-semibold text-gray-900 group-hover:text-amber-700">
                     {appliance.name}
                   </h2>
                   <p className="text-sm text-gray-500 mt-1">
@@ -121,7 +121,7 @@ export default async function CategoryPage({
               <Link
                 key={c}
                 href={`/category/${categoryToSlug(c)}`}
-                className="rounded-lg border border-gray-200 px-4 py-3 text-center hover:border-blue-300 hover:bg-blue-50 transition text-sm font-medium text-gray-700 hover:text-blue-700"
+                className="rounded-lg border border-gray-200 px-4 py-3 text-center hover:border-amber-300 hover:bg-amber-50 transition text-sm font-medium text-gray-700 hover:text-amber-700"
               >
                 {c}
               </Link>

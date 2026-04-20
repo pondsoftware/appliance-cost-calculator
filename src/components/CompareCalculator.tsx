@@ -46,7 +46,7 @@ export default function CompareCalculator() {
             id="compare-state"
             value={selectedState}
             onChange={(e) => handleStateChange(e.target.value)}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition bg-white"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition bg-white"
           >
             <option value="US">US Average ($0.16/kWh)</option>
             {STATE_RATES.map((s) => (
@@ -72,7 +72,7 @@ export default function CompareCalculator() {
                 setRate(Number(e.target.value));
                 setSelectedState("US");
               }}
-              className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+              className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition"
               min={0}
               step={0.01}
             />
@@ -100,7 +100,7 @@ export default function CompareCalculator() {
               id={`appliance-${index}`}
               value={selections[index]}
               onChange={(e) => handleSelection(index, e.target.value)}
-              className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition bg-white"
+              className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition bg-white"
             >
               <option value="">Select an appliance...</option>
               {appliances.map((a) => (
@@ -143,7 +143,7 @@ export default function CompareCalculator() {
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-600">Daily</span>
-                      <span className="font-semibold text-blue-700">
+                      <span className="font-semibold text-amber-700">
                         ${dailyCost.toFixed(2)}
                       </span>
                     </div>
@@ -209,7 +209,7 @@ export default function CompareCalculator() {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-4">
                     <div
-                      className="bg-blue-500 h-4 rounded-full transition-all duration-300"
+                      className="bg-amber-500 h-4 rounded-full transition-all duration-300"
                       style={{ width: `${percentage}%` }}
                     />
                   </div>

@@ -50,7 +50,7 @@ export default function Calculator({ appliance }: CalculatorProps) {
               type="number"
               value={watts}
               onChange={(e) => setWatts(Number(e.target.value))}
-              className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+              className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition"
               min={0}
               step={10}
             />
@@ -72,7 +72,7 @@ export default function Calculator({ appliance }: CalculatorProps) {
               type="number"
               value={hoursPerDay}
               onChange={(e) => setHoursPerDay(Number(e.target.value))}
-              className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+              className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition"
               min={0}
               max={24}
               step={0.5}
@@ -93,7 +93,7 @@ export default function Calculator({ appliance }: CalculatorProps) {
             id="state"
             value={selectedState}
             onChange={(e) => handleStateChange(e.target.value)}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition bg-white"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition bg-white"
           >
             <option value="US">US Average ($0.16/kWh)</option>
             {STATE_RATES.map((s) => (
@@ -119,7 +119,7 @@ export default function Calculator({ appliance }: CalculatorProps) {
                 setRate(Number(e.target.value));
                 setSelectedState("US");
               }}
-              className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+              className="w-full rounded-lg border border-gray-300 px-4 py-3 text-lg focus:border-amber-500 focus:ring-2 focus:ring-amber-200 outline-none transition"
               min={0}
               step={0.01}
             />
@@ -175,17 +175,17 @@ function ResultCard({
   color: "blue" | "green" | "purple";
 }) {
   const colors = {
-    blue: "bg-blue-50 border-blue-200",
+    blue: "bg-amber-50 border-amber-200",
     green: "bg-green-50 border-green-200",
     purple: "bg-purple-50 border-purple-200",
   };
   const textColors = {
-    blue: "text-blue-900",
+    blue: "text-amber-900",
     green: "text-green-900",
     purple: "text-purple-900",
   };
   const subColors = {
-    blue: "text-blue-600",
+    blue: "text-amber-600",
     green: "text-green-600",
     purple: "text-purple-600",
   };
