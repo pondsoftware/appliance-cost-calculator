@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://appliancecostcalculator.com/sitemap.xml
+Sitemap: https://appliancecostcalculator.net/sitemap.xml
