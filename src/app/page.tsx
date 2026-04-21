@@ -1,4 +1,5 @@
 import ApplianceList from "@/components/ApplianceList";
+import Link from "next/link";
 
 const faqData = [
   {
@@ -59,6 +60,76 @@ export default function Home() {
       </div>
 
       <section className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Guides & Resources</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+          <Link
+            href="/most-efficient-appliances"
+            className="block rounded-lg border border-gray-200 p-5 hover:border-amber-300 hover:bg-amber-50 transition group"
+          >
+            <h3 className="font-semibold text-gray-900 group-hover:text-amber-700 mb-1">
+              Most Efficient Appliances
+            </h3>
+            <p className="text-sm text-gray-600">
+              Complete ranking of all appliances by annual operating cost
+            </p>
+          </Link>
+          <Link
+            href="/electricity-rates"
+            className="block rounded-lg border border-gray-200 p-5 hover:border-amber-300 hover:bg-amber-50 transition group"
+          >
+            <h3 className="font-semibold text-gray-900 group-hover:text-amber-700 mb-1">
+              Electricity Rates by State
+            </h3>
+            <p className="text-sm text-gray-600">
+              Compare average residential rates across all 50 states
+            </p>
+          </Link>
+          <Link
+            href="/save-energy"
+            className="block rounded-lg border border-gray-200 p-5 hover:border-amber-300 hover:bg-amber-50 transition group"
+          >
+            <h3 className="font-semibold text-gray-900 group-hover:text-amber-700 mb-1">
+              How to Save on Energy Bills
+            </h3>
+            <p className="text-sm text-gray-600">
+              Practical tips organized by room with estimated savings
+            </p>
+          </Link>
+          <Link
+            href="/energy-star"
+            className="block rounded-lg border border-gray-200 p-5 hover:border-amber-300 hover:bg-amber-50 transition group"
+          >
+            <h3 className="font-semibold text-gray-900 group-hover:text-amber-700 mb-1">
+              Energy Star Guide
+            </h3>
+            <p className="text-sm text-gray-600">
+              Understand ratings, savings, and ROI on efficient upgrades
+            </p>
+          </Link>
+          <Link
+            href="/solar-savings"
+            className="block rounded-lg border border-gray-200 p-5 hover:border-amber-300 hover:bg-amber-50 transition group"
+          >
+            <h3 className="font-semibold text-gray-900 group-hover:text-amber-700 mb-1">
+              Solar Savings Calculator
+            </h3>
+            <p className="text-sm text-gray-600">
+              Estimate how solar panels affect your appliance costs
+            </p>
+          </Link>
+          <Link
+            href="/compare"
+            className="block rounded-lg border border-gray-200 p-5 hover:border-amber-300 hover:bg-amber-50 transition group"
+          >
+            <h3 className="font-semibold text-gray-900 group-hover:text-amber-700 mb-1">
+              Compare Appliances
+            </h3>
+            <p className="text-sm text-gray-600">
+              Side-by-side cost comparison of 2-3 appliances
+            </p>
+          </Link>
+        </div>
+
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
         <div className="space-y-6">
           {faqData.map((item, index) => (
