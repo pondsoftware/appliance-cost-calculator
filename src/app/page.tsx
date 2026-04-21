@@ -24,9 +24,21 @@ const faqData = [
   }
 ];
 
+const webAppJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Appliance Electricity Cost Calculator",
+  description: "Find out exactly how much it costs to run any appliance. Free electricity cost calculator with pre-loaded wattages for 30+ common appliances.",
+  url: "https://appliancecostcalculator.net",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+};
+
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

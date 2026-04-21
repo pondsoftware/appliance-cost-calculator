@@ -34,9 +34,21 @@ const faqData = [
   },
 ];
 
+const webAppJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Solar Savings Calculator",
+  description: "Calculate how much solar panels can reduce your electricity bill. Estimate solar production, monthly savings, system payback period, and 25-year net savings.",
+  url: "https://appliancecostcalculator.net/solar-savings",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+};
+
 export default function SolarSavingsPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

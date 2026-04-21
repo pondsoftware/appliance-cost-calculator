@@ -40,8 +40,20 @@ export default function ElectricityRatesPage() {
   const cheapest5 = [...STATE_RATES].sort((a, b) => a.rate - b.rate).slice(0, 5);
   const expensive5 = sortedRates.slice(0, 5);
 
+  const webAppJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Electricity Rates by State",
+    description: "Compare average residential electricity rates across all 50 US states. See how your state ranks and understand how rates affect your appliance operating costs.",
+    url: "https://appliancecostcalculator.net/electricity-rates",
+    applicationCategory: "UtilityApplication",
+    operatingSystem: "Any",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

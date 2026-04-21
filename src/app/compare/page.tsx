@@ -7,9 +7,22 @@ export const metadata: Metadata = {
     "Compare the electricity costs of 2-3 appliances side by side. See which appliances cost more to run daily, monthly, and yearly based on your electricity rate.",
 };
 
+const webAppJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Appliance Cost Comparison",
+  description: "Compare the electricity costs of 2-3 appliances side by side. See which appliances cost more to run daily, monthly, and yearly based on your electricity rate.",
+  url: "https://appliancecostcalculator.net/compare",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+};
+
 export default function ComparePage() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
+      <div className="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
       <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
         Compare Appliance Electricity Costs
       </h1>
@@ -20,5 +33,6 @@ export default function ComparePage() {
 
       <CompareCalculator />
     </div>
+    </>
   );
 }

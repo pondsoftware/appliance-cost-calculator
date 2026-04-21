@@ -130,8 +130,20 @@ const comparisonData: ComparisonRow[] = [
 export default function EnergyStarPage() {
   const totalAnnualSavings = comparisonData.reduce((sum, row) => sum + row.annualSavings, 0);
 
+  const webAppJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Energy Star Appliance Guide",
+    description: "Understand Energy Star ratings and how much you can save. Comparison table showing Energy Star vs standard efficiency for major appliance types with ROI calculations.",
+    url: "https://appliancecostcalculator.net/energy-star",
+    applicationCategory: "UtilityApplication",
+    operatingSystem: "Any",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

@@ -56,8 +56,20 @@ export default function MostEfficientAppliancesPage() {
       .sort((a, b) => b.yearlyCost - a.yearlyCost),
   }));
 
+  const webAppJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Most Energy Efficient Appliances",
+    description: "See which appliances cost the most and least to run. Complete ranking of 30+ common appliances by annual electricity cost, grouped by category with energy-saving tips.",
+    url: "https://appliancecostcalculator.net/most-efficient-appliances",
+    applicationCategory: "UtilityApplication",
+    operatingSystem: "Any",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

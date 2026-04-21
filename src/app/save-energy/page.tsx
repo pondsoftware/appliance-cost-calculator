@@ -207,8 +207,20 @@ export default function SaveEnergyPage() {
     }, 0);
   }, 0);
 
+  const webAppJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Energy Savings Guide",
+    description: "Reduce your electricity bill with these proven energy-saving tips organized by room and appliance type. Estimated annual savings included for each tip.",
+    url: "https://appliancecostcalculator.net/save-energy",
+    applicationCategory: "UtilityApplication",
+    operatingSystem: "Any",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
