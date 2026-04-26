@@ -1,3 +1,9 @@
+export interface PurchasePrice {
+  min: number;
+  max: number;
+  note?: string;
+}
+
 export interface Appliance {
   slug: string;
   name: string;
@@ -6,6 +12,7 @@ export interface Appliance {
   typicalHoursPerDay: number;
   description: string;
   tips: string[];
+  purchasePrice?: PurchasePrice;
 }
 
 export const categories = [
@@ -27,6 +34,7 @@ export const appliances: Appliance[] = [
     category: "Heating & Cooling",
     watts: 1500,
     typicalHoursPerDay: 8,
+    purchasePrice: { min: 25, max: 150, note: "Basic ceramic to infrared/oil-filled models" },
     description:
       "A portable electric space heater typically uses 1,500 watts on its high setting. Ceramic, oil-filled radiator, and infrared heaters all draw similar wattage.",
     tips: [
@@ -41,6 +49,7 @@ export const appliances: Appliance[] = [
     category: "Heating & Cooling",
     watts: 1200,
     typicalHoursPerDay: 8,
+    purchasePrice: { min: 150, max: 600, note: "8,000–12,000 BTU units" },
     description:
       "A standard window air conditioning unit (8,000–10,000 BTU) draws around 1,200 watts. Larger units for bigger rooms can use up to 1,500 watts.",
     tips: [
@@ -55,6 +64,7 @@ export const appliances: Appliance[] = [
     category: "Heating & Cooling",
     watts: 3500,
     typicalHoursPerDay: 8,
+    purchasePrice: { min: 3500, max: 7500, note: "Installed cost including labor" },
     description:
       "Central air conditioning for a typical home (3-ton unit) uses about 3,500 watts. This is one of the largest electricity consumers in most households.",
     tips: [
@@ -69,6 +79,7 @@ export const appliances: Appliance[] = [
     category: "Heating & Cooling",
     watts: 75,
     typicalHoursPerDay: 12,
+    purchasePrice: { min: 50, max: 400, note: "Basic to smart/designer models" },
     description:
       "Ceiling fans use very little electricity — about 75 watts on medium speed. They don't cool the air but create a wind-chill effect that makes you feel cooler.",
     tips: [
@@ -83,6 +94,7 @@ export const appliances: Appliance[] = [
     category: "Heating & Cooling",
     watts: 1400,
     typicalHoursPerDay: 8,
+    purchasePrice: { min: 300, max: 700, note: "8,000–14,000 BTU portable units" },
     description:
       "Portable air conditioners typically use 1,000–1,400 watts. They're less efficient than window units because the exhaust hose radiates heat back into the room.",
     tips: [
@@ -97,6 +109,7 @@ export const appliances: Appliance[] = [
     category: "Heating & Cooling",
     watts: 10000,
     typicalHoursPerDay: 6,
+    purchasePrice: { min: 1500, max: 4000, note: "Installed cost is typically $2,500–$6,000" },
     description:
       "An electric furnace is one of the most power-hungry appliances in a home, using 10,000–15,000 watts. If you have one, it likely dominates your winter electricity bill.",
     tips: [
@@ -111,6 +124,7 @@ export const appliances: Appliance[] = [
     category: "Heating & Cooling",
     watts: 600,
     typicalHoursPerDay: 12,
+    purchasePrice: { min: 150, max: 400, note: "30–70 pint capacity models" },
     description:
       "A standard dehumidifier draws about 300–700 watts depending on capacity. They often run for long periods, especially in basements, which adds up.",
     tips: [
@@ -126,6 +140,7 @@ export const appliances: Appliance[] = [
     category: "Kitchen",
     watts: 150,
     typicalHoursPerDay: 24,
+    purchasePrice: { min: 800, max: 3000, note: "Top-freezer to French door models" },
     description:
       "A modern refrigerator cycles on and off throughout the day, averaging about 150 watts. Older models from the 1990s can use 2-3x more.",
     tips: [
@@ -140,6 +155,7 @@ export const appliances: Appliance[] = [
     category: "Kitchen",
     watts: 2500,
     typicalHoursPerDay: 1,
+    purchasePrice: { min: 600, max: 2000, note: "Freestanding range to double wall oven" },
     description:
       "An electric oven uses about 2,000–2,500 watts when heating. It cycles on and off to maintain temperature, so the average draw is lower during cooking.",
     tips: [
@@ -154,6 +170,7 @@ export const appliances: Appliance[] = [
     category: "Kitchen",
     watts: 1200,
     typicalHoursPerDay: 0.25,
+    purchasePrice: { min: 80, max: 400, note: "Countertop to over-the-range models" },
     description:
       "A microwave draws about 1,000–1,200 watts but typically runs for only minutes at a time. It's one of the most energy-efficient ways to heat food.",
     tips: [
@@ -168,6 +185,7 @@ export const appliances: Appliance[] = [
     category: "Kitchen",
     watts: 1800,
     typicalHoursPerDay: 1,
+    purchasePrice: { min: 500, max: 1500, note: "Basic to smart/third-rack models" },
     description:
       "A dishwasher uses about 1,800 watts per cycle, with most of that energy going to heating the water. A typical cycle runs about an hour.",
     tips: [
@@ -182,6 +200,7 @@ export const appliances: Appliance[] = [
     category: "Kitchen",
     watts: 900,
     typicalHoursPerDay: 0.25,
+    purchasePrice: { min: 25, max: 300, note: "Basic drip to programmable/thermal carafe" },
     description:
       "A drip coffee maker uses about 900 watts while brewing. Models with a warming plate continue drawing 70-80 watts to keep coffee hot.",
     tips: [
@@ -196,6 +215,7 @@ export const appliances: Appliance[] = [
     category: "Kitchen",
     watts: 1500,
     typicalHoursPerDay: 0.5,
+    purchasePrice: { min: 40, max: 200, note: "Compact basket to large oven-style models" },
     description:
       "An air fryer typically uses 1,200–1,500 watts. Despite the high wattage, cooking times are shorter than an oven, making it more efficient overall.",
     tips: [
@@ -210,6 +230,7 @@ export const appliances: Appliance[] = [
     category: "Kitchen",
     watts: 1000,
     typicalHoursPerDay: 0.5,
+    purchasePrice: { min: 60, max: 180, note: "6–8 quart Instant Pot models" },
     description:
       "An electric pressure cooker draws about 1,000 watts during pressurizing, then cycles to maintain pressure at a much lower draw. Very efficient for long-cook recipes.",
     tips: [
@@ -225,6 +246,7 @@ export const appliances: Appliance[] = [
     category: "Laundry",
     watts: 5000,
     typicalHoursPerDay: 1,
+    purchasePrice: { min: 500, max: 1500, note: "Standard to steam/sensor-dry models" },
     description:
       "An electric clothes dryer is one of the most energy-hungry appliances in a home, using 4,000–5,000 watts per cycle. Each load costs roughly $0.50–$0.75.",
     tips: [
@@ -239,6 +261,7 @@ export const appliances: Appliance[] = [
     category: "Laundry",
     watts: 500,
     typicalHoursPerDay: 1,
+    purchasePrice: { min: 500, max: 1500, note: "Top-load to high-efficiency front-load" },
     description:
       "A washing machine uses about 400–500 watts per cycle. However, if you use hot water, most of the energy cost is from the water heater, not the washer.",
     tips: [
@@ -254,6 +277,7 @@ export const appliances: Appliance[] = [
     category: "Electronics",
     watts: 500,
     typicalHoursPerDay: 4,
+    purchasePrice: { min: 800, max: 3000, note: "Mid-range to high-end builds" },
     description:
       "A gaming PC with a dedicated GPU draws 400–600 watts under load. Idle power draw is much lower at around 80-150 watts. High-end builds with RTX 4090 cards can peak at 800+ watts.",
     tips: [
@@ -268,6 +292,7 @@ export const appliances: Appliance[] = [
     category: "Electronics",
     watts: 100,
     typicalHoursPerDay: 5,
+    purchasePrice: { min: 350, max: 2500, note: "Budget LED to OLED/QLED 55\" models" },
     description:
       "A modern 55\" LED TV uses about 80-100 watts. OLED TVs use slightly more. Older plasma TVs could use 300-400 watts for the same size.",
     tips: [
@@ -282,6 +307,7 @@ export const appliances: Appliance[] = [
     category: "Electronics",
     watts: 200,
     typicalHoursPerDay: 3,
+    purchasePrice: { min: 450, max: 550, note: "PS5 or Xbox Series X standard edition" },
     description:
       "Current-gen consoles draw about 100-200 watts during gameplay and 10-15 watts in rest/standby mode. Older consoles like the PS4 Pro use about 150 watts.",
     tips: [
@@ -296,6 +322,7 @@ export const appliances: Appliance[] = [
     category: "Electronics",
     watts: 200,
     typicalHoursPerDay: 8,
+    purchasePrice: { min: 400, max: 1500, note: "Budget office PC to mid-range workstation" },
     description:
       "A typical desktop computer (non-gaming) with a monitor uses about 150-200 watts. Laptops are much more efficient at 30-60 watts.",
     tips: [
@@ -310,6 +337,7 @@ export const appliances: Appliance[] = [
     category: "Electronics",
     watts: 50,
     typicalHoursPerDay: 8,
+    purchasePrice: { min: 300, max: 2000, note: "Budget Chromebook to premium ultrabook" },
     description:
       "Laptops are designed for battery efficiency and typically draw 30-60 watts while plugged in. Even gaming laptops under load rarely exceed 180 watts.",
     tips: [
@@ -324,6 +352,7 @@ export const appliances: Appliance[] = [
     category: "Electronics",
     watts: 40,
     typicalHoursPerDay: 8,
+    purchasePrice: { min: 150, max: 600, note: "24–27\" 1080p to 4K/ultrawide monitors" },
     description:
       "A 27\" LED monitor uses about 30-40 watts. Ultrawide and 4K monitors use slightly more, up to 60 watts.",
     tips: [
@@ -338,6 +367,7 @@ export const appliances: Appliance[] = [
     category: "Electronics",
     watts: 12,
     typicalHoursPerDay: 24,
+    purchasePrice: { min: 80, max: 400, note: "Basic single-band to Wi-Fi 6E/mesh systems" },
     description:
       "A home Wi-Fi router uses about 10-15 watts and runs 24/7. While the wattage is low, it adds up over a year — roughly $15-20 annually.",
     tips: [
@@ -353,6 +383,7 @@ export const appliances: Appliance[] = [
     category: "Lighting",
     watts: 60,
     typicalHoursPerDay: 5,
+    purchasePrice: { min: 1, max: 3, note: "Per bulb; typically sold in multi-packs" },
     description:
       "A traditional 60-watt incandescent bulb produces about 800 lumens. 90% of the energy is wasted as heat rather than light.",
     tips: [
@@ -367,6 +398,7 @@ export const appliances: Appliance[] = [
     category: "Lighting",
     watts: 9,
     typicalHoursPerDay: 5,
+    purchasePrice: { min: 3, max: 10, note: "Per bulb; cheaper per-unit when bought in packs" },
     description:
       "An LED bulb producing 800 lumens (equivalent to a 60W incandescent) draws only 8-10 watts. LEDs are the most efficient lighting technology available.",
     tips: [
@@ -382,6 +414,7 @@ export const appliances: Appliance[] = [
     category: "Bathroom",
     watts: 1800,
     typicalHoursPerDay: 0.17,
+    purchasePrice: { min: 25, max: 200, note: "Basic to professional ionic/tourmaline models" },
     description:
       "A hair dryer uses 1,500–1,800 watts on high heat. Because it's typically used for 10-15 minutes, the per-use cost is low — about $0.03-0.04.",
     tips: [
@@ -396,6 +429,7 @@ export const appliances: Appliance[] = [
     category: "Bathroom",
     watts: 4500,
     typicalHoursPerDay: 3,
+    purchasePrice: { min: 600, max: 1500, note: "40–50 gallon tank; installed cost adds $200–$500" },
     description:
       "An electric water heater (40-50 gallon tank) draws about 4,500 watts. It cycles on and off to maintain temperature. Typically the second-largest electricity consumer after HVAC.",
     tips: [
@@ -411,6 +445,7 @@ export const appliances: Appliance[] = [
     category: "Outdoor",
     watts: 1500,
     typicalHoursPerDay: 8,
+    purchasePrice: { min: 500, max: 1500, note: "Single-speed to variable-speed pumps" },
     description:
       "A standard pool pump runs 6-12 hours per day and draws about 1,500-2,500 watts. A variable-speed pump can cut this dramatically.",
     tips: [
@@ -425,6 +460,7 @@ export const appliances: Appliance[] = [
     category: "Outdoor",
     watts: 7200,
     typicalHoursPerDay: 4,
+    purchasePrice: { min: 300, max: 800, note: "Hardware only; installation adds $500–$2,000" },
     description:
       "A Level 2 EV charger (240V, 30A) draws about 7,200 watts. Charging a typical EV from empty to full takes 8-10 hours and adds roughly $8-12 to your electric bill per full charge.",
     tips: [
@@ -439,6 +475,7 @@ export const appliances: Appliance[] = [
     category: "Outdoor",
     watts: 3000,
     typicalHoursPerDay: 4,
+    purchasePrice: { min: 3000, max: 12000, note: "Portable plug-in to in-ground spa" },
     description:
       "A hot tub heater draws 3,000-6,000 watts. The pump runs continuously and adds 500-1,500 watts more. Monthly costs range from $30-$60 depending on usage and climate.",
     tips: [
@@ -454,6 +491,7 @@ export const appliances: Appliance[] = [
     category: "Home Office",
     watts: 600,
     typicalHoursPerDay: 0.1,
+    purchasePrice: { min: 150, max: 600, note: "Basic monochrome to color laser" },
     description:
       "A laser printer draws 300-600 watts while printing but only about 3-5 watts in standby. Most of the energy goes to heating the fuser.",
     tips: [
@@ -468,6 +506,7 @@ export const appliances: Appliance[] = [
     category: "Home Office",
     watts: 1500,
     typicalHoursPerDay: 24,
+    purchasePrice: { min: 1000, max: 5000, note: "GPU-based rigs; varies widely with hardware" },
     description:
       "A GPU-based crypto mining rig draws 1,000-2,000 watts and runs 24/7. At average electricity rates, this costs $100-200+ per month — often exceeding mining revenue.",
     tips: [

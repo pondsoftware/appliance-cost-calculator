@@ -28,10 +28,15 @@ export async function generateMetadata({
     365
   ).toFixed(0);
 
-  return {
-    title: `How Much Does a ${appliance.name} Cost to Run? (~$${yearlyCost}/year)`,
-    description: `A ${appliance.name} uses ${appliance.watts}W and costs approximately $${yearlyCost} per year to run. Use our free calculator to find out your exact cost based on your electricity rate.`,
-  };
+  const pp = appliance.purchasePrice;
+  const title = pp
+    ? `${appliance.name} Cost: $${pp.min.toLocaleString()}–$${pp.max.toLocaleString()} to Buy, ~$${yearlyCost}/yr to Run`
+    : `How Much Does a ${appliance.name} Cost to Run? (~$${yearlyCost}/year)`;
+  const description = pp
+    ? `Average ${appliance.name} cost is $${pp.min.toLocaleString()}–$${pp.max.toLocaleString()}. It costs about $${yearlyCost}/year in electricity to run. Calculate your exact cost with our free calculator.`
+    : `A ${appliance.name} uses ${appliance.watts}W and costs approximately $${yearlyCost} per year to run. Use our free calculator to find out your exact cost based on your electricity rate.`;
+
+  return { title, description };
 }
 
 export default async function AppliancePage({
@@ -57,11 +62,23 @@ export default async function AppliancePage({
       </Link>
 
       <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-        How Much Does a {appliance.name} Cost to Run?
+        {appliance.name} Cost: Purchase Price &amp; Running Cost
       </h1>
-      <p className="text-lg text-gray-600 mb-8 max-w-2xl">
+      <p className="text-lg text-gray-600 mb-6 max-w-2xl">
         {appliance.description}
       </p>
+
+      {appliance.purchasePrice && (
+        <div className="mb-8 bg-amber-50 border border-amber-200 rounded-lg p-5">
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">Average Purchase Price</h2>
+          <p className="text-3xl font-bold text-amber-600 mb-1">
+            ${appliance.purchasePrice.min.toLocaleString()}–${appliance.purchasePrice.max.toLocaleString()}
+          </p>
+          {appliance.purchasePrice.note && (
+            <p className="text-sm text-gray-500">{appliance.purchasePrice.note}</p>
+          )}
+        </div>
+      )}
 
       <Calculator appliance={appliance} />
 
