@@ -72,6 +72,26 @@ export default function Home() {
       </div>
 
       <section className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">How to Use the Appliance Cost Calculator</h2>
+        <div className="space-y-6 mb-12">
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Step 1: Pick Your Appliance</h3>
+            <p className="text-gray-600">Select from over 30 pre-loaded appliances — from refrigerators and washing machines to space heaters and gaming consoles. Each entry includes a typical wattage based on manufacturer specs and real-world usage data. If your appliance isn&apos;t listed, you can enter a custom wattage manually using the number on your appliance&apos;s label.</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Step 2: Enter Your Usage Hours</h3>
+            <p className="text-gray-600">Tell the calculator how many hours per day you typically run the appliance. For something like a refrigerator that runs continuously, enter 24 hours. For a microwave you use twice a day for 5 minutes, enter 0.17 hours (10 minutes total). The more accurate your hours, the more precise your cost estimate.</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Step 3: Set Your Electricity Rate</h3>
+            <p className="text-gray-600">The default is the U.S. average of $0.16 per kWh, but your actual rate may differ. Find your rate on your electricity bill under &quot;price per kWh&quot; or &quot;energy charge.&quot; Rates typically range from $0.10 in low-cost states to $0.30+ in Hawaii and the Northeast.</p>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Step 4: Review Your Costs</h3>
+            <p className="text-gray-600">The calculator instantly shows your estimated daily, monthly, and yearly electricity cost for that appliance. Use these numbers to spot the biggest energy consumers in your home, compare appliances before buying, or calculate whether an upgrade to a more efficient model makes financial sense.</p>
+          </div>
+        </div>
+
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Guides & Resources</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
           <Link
