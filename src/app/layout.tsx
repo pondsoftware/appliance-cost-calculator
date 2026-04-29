@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
   },
   title: {
-    default: "Appliance Electricity Cost Calculator — How Much Does It Cost?",
+    default: "Appliance Electricity Cost Calculator | Free Tool",
     template: "%s | Appliance Cost Calculator",
   },
   description:
